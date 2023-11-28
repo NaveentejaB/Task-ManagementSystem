@@ -1,6 +1,4 @@
 const mongoose = require("mongoose")
-const passportLocalMongoose=require("passport-local-mongoose")
-const findOrCreate = require("mongoose-findorcreate")
 
 const taskSchema = new mongoose.Schema({
     taskID :{
@@ -35,8 +33,6 @@ const taskSchema = new mongoose.Schema({
     }
 })
 
-taskSchema.plugin(passportLocalMongoose)
-taskSchema.plugin(findOrCreate)
 
 
 const Task = mongoose.model("Task",taskSchema)
